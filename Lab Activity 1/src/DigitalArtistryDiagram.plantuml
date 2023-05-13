@@ -1,24 +1,19 @@
 @startuml
 
-title __HELLO WORLD's Class Diagram__\n
+title __SRC's Class Diagram__\n
 
-  namespace  {
-    class Circle {
+
+
+  namespace DigitalArtistry {
+    class DigitalArtistry {
+        {static} + main()
+        + run()
     }
   }
-  
 
-  namespace  {
-    class Square {
-    }
-  }
-  
 
-  namespace  {
-    class helloworld {
-    }
-  }
-  
+
+  DigitalArtistry -up-|> acm.program.GraphicsProgram
 
 
 

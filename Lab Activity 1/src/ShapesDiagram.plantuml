@@ -2,12 +2,38 @@
 
 title __SRC's Class Diagram__\n
 
+
+
   namespace Circle {
     class Circle {
         - radius : int
         {static} + main()
         ~ GetArea()
         ~ GetPerimeter()
+    }
+  }
+
+
+
+  namespace Ellipse {
+    class Ellipse {
+        - semiMajorAxis : int
+        - semiMinorAxis : int
+        {static} + main()
+        ~ CalculateArea()
+        ~ CalculatePerimeter()
+    }
+  }
+
+
+
+  namespace Rectangle {
+    class Rectangle {
+        ~ height : int
+        ~ width : int
+        {static} + main()
+        ~ CalculateArea()
+        ~ CalculatePerimeter()
     }
   }
   
@@ -20,16 +46,6 @@ title __SRC's Class Diagram__\n
         ~ GetPerimeter()
     }
   }
-  
-
-  namespace helloworld {
-    class helloworld {
-        {static} + add()
-        {static} + main()
-    }
-  }
-  
-
 
 
 right footer
