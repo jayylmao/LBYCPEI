@@ -9,6 +9,7 @@
 
 import acm.graphics.GCanvas;
 import acm.graphics.GLabel;
+import acm.graphics.GObject;
 
 public class HangmanCanvas extends GCanvas {
 
@@ -23,25 +24,29 @@ public class HangmanCanvas extends GCanvas {
      */
     public void reset() {
         // Sample graphics object
-        GLabel testMessage = new GLabel("Hello LBYCPEI!");
         textX = TEXT_X_OFFSET;
         textY = TEXT_HEIGHT;
-        add(testMessage,  textX , textY);
-
-        GLabel nextMessage = new GLabel("This is the next line!");
-        textY += TEXT_HEIGHT;
-        add(nextMessage,  textX , textY );
-
-        printText("Custom println()");
-
-        printText("Custom println()");
     }
 
     public void printText(String text){
         GLabel line = new GLabel(text);
+        line.setFont("Courier New");
         textY += TEXT_HEIGHT;
         add(line,  textX , textY );
     }
 
     /* Write your methods here */
+
+    public void clear() {
+        System.out.println("ELEMENTS ON CANVAS: " + getElementCount());
+        textX = TEXT_X_OFFSET;
+        textY = TEXT_HEIGHT;
+
+        // iterate through each element and remove it.
+        for (int i = 0; i < getElementCount(); i++) {
+            System.out.println("element: " + getElement(i));
+            GObject element = getElement(i);
+            remove(element);
+        }
+    }
 }
