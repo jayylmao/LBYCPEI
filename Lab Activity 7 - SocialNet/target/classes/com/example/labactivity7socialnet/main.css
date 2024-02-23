@@ -1,0 +1,58 @@
+.list-view {
+    -fx-background-color: rgb(30, 30, 30);
+    -fx-background-radius: 10px;
+}
+
+.list-cell {
+    -fx-background-color: rgb(30, 30, 30);
+    -fx-text-fill: white;
+}
+
+.list-cell:pressed {
+    -fx-background-color: rgb(159, 212, 243);
+    -fx-text-fill: rgb(30, 30, 30);
+}
+
+.toolbar-button {
+    -fx-background-color: rgb(24, 24, 24);
+    -fx-border-color: rgb(60, 60, 60);
+    -fx-border-radius:  5px 5px 5px 5px;
+    -fx-background-radius: 5px;
+}
+
+.toolbar-button:hover {
+    -fx-background-color: rgb(28, 28, 28);
+}
+
+.toolbar-button:pressed {
+    -fx-background-color: rgb(36, 36, 36);
+}
+
+.delete-button {
+    -fx-text-fill: #eb7171;
+}
+
+.delete-button:pressed {
+    -fx-background-color: #eb7171;
+    -fx-text-fill: rgb(24, 24, 24);
+}
+
+.text-field {
+    -fx-background-color: rgb(28, 28, 28);
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
+    -fx-border-color: rgb(60, 60, 60);
+    -fx-text-fill: rgb(235, 235, 235);
+}
+
+.text-field:hover {
+    -fx-background-color: rgb(36, 36, 36);
+}
+
+.text-field:focus {
+    -fx-background-color: rgb(44, 44, 44);
+}
+
+.split-pane > .split-pane-divider {
+    -fx-background-color: transparent;
+}

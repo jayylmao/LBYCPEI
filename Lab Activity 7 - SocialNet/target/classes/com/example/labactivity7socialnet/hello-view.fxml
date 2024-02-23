@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" prefHeight="720.0" prefWidth="1280.0" spacing="20.0" style="-fx-background-color: rgb(20, 20, 20);" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.labactivity7socialnet.SocialNetController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <children>
+      <ToolBar style="-fx-background-color: rgb(20, 20, 20);">
+        <items>
+            <Label prefHeight="17.0" prefWidth="92.0" text="socialnet™" textFill="#7ca2e4">
+               <font>
+                  <Font name="Lucida Sans Demibold Italic" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="personLookupField" prefHeight="25.0" prefWidth="296.0" promptText="Search for a person" style="-fx-border-radius: 50px 10px 10px 50px; -fx-background-radius: 50px 10px 10px 50px;" styleClass="text-field" stylesheets="@main.css" />
+            <Button fx:id="addDatabaseButton" mnemonicParsing="false" onAction="#onAddPersonDatabaseButtonPressed" prefHeight="25.0" prefWidth="200.0" styleClass="toolbar-button" stylesheets="@main.css" text="Add Person to Database" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="removeDatabaseButton" mnemonicParsing="false" onAction="#onRemoveDatabaseButtonPressed" prefHeight="25.0" prefWidth="200.0" stylesheets="@main.css" text="Remove Person from Database" textFill="#eb7171">
+               <styleClass>
+                  <String fx:value="delete-button" />
+                  <String fx:value="toolbar-button" />
+               </styleClass></Button>
+            <Button fx:id="lookupDatabaseButton" mnemonicParsing="false" onAction="#onLookupDatabaseButtonPressed" prefHeight="25.0" prefWidth="200.0" style="-fx-border-radius: 10px 50px 50px 10px; -fx-background-radius: 10px 50px 50px 10px;" styleClass="toolbar-button" stylesheets="@main.css" text="Lookup Person" textFill="WHITE" />
+        </items>
+      </ToolBar>
+      <SplitPane dividerPositions="0.29797979797979796" stylesheets="@main.css" VBox.vgrow="ALWAYS">
+        <items>
+          <AnchorPane maxWidth="240.0" minHeight="0.0" minWidth="160.0" prefHeight="623.0" prefWidth="309.0" style="-fx-background-color: rgb(30, 30, 30);" stylesheets="@main.css">
+               <children>
+                  <Button fx:id="updateStatusButton" layoutX="13.0" layoutY="96.0" mnemonicParsing="false" onAction="#onUpdateStatusButtonPressed" prefHeight="25.0" prefWidth="214.0" style="-fx-border-radius: 50px;" styleClass="toolbar-button" stylesheets="@main.css" text="Update status" textFill="WHITE" />
+                  <TextField fx:id="statusField" layoutX="13.0" layoutY="61.0" prefHeight="25.0" prefWidth="214.0" promptText="What's happening?" styleClass="text-field" stylesheets="@main.css" />
+                  <TextField fx:id="profilePictureField" layoutX="13.0" layoutY="151.0" prefHeight="25.0" prefWidth="214.0" promptText="Paste the path to your image here" style="-fx-text-fill: rgb(235, 235, 235);" stylesheets="@main.css" />
+                  <Button fx:id="updateProfilePictureButton" layoutX="13.0" layoutY="186.0" mnemonicParsing="false" onAction="#onUpdateProfilePictureButtonPressed" prefHeight="25.0" prefWidth="214.0" style="-fx-border-radius: 50px;" styleClass="toolbar-button" stylesheets="@main.css" text="Update profile picture" textFill="WHITE" />
+                  <TextField fx:id="quoteField" layoutX="13.0" layoutY="241.0" prefHeight="25.0" prefWidth="214.0" promptText="Put an inspiring quote here!" style="-fx-text-fill: rgb(235, 235, 235);" styleClass="text-field" stylesheets="@main.css" />
+                  <Button fx:id="updateQuoteButton" layoutX="13.0" layoutY="276.0" mnemonicParsing="false" onAction="#onUpdateQuoteButtonPressed" prefHeight="25.0" prefWidth="214.0" style="-fx-border-radius: 50px;" styleClass="toolbar-button" stylesheets="@main.css" text="Update quote" textFill="WHITE" />
+                  <TextField fx:id="addFriendField" layoutX="13.0" layoutY="331.0" prefHeight="25.0" prefWidth="214.0" promptText="Who do you want to add?" style="-fx-text-fill: rgb(235, 235, 235);" styleClass="text-field" stylesheets="@main.css" />
+                  <Button fx:id="addFriendButton" layoutX="13.0" layoutY="366.0" mnemonicParsing="false" onAction="#onAddFriendButtonPressed" prefHeight="25.0" prefWidth="214.0" style="-fx-border-radius: 50px;" styleClass="toolbar-button" stylesheets="@main.css" text="Add friend" textFill="WHITE" />
+                  <TextField fx:id="removeFriendField" layoutX="13.0" layoutY="421.0" prefHeight="25.0" prefWidth="214.0" promptText="Who do you want to remove?" style="-fx-text-fill: rgb(235, 235, 235);" styleClass="text-field" stylesheets="@main.css" />
+                  <Button fx:id="removeFriendButton" layoutX="13.0" layoutY="456.0" mnemonicParsing="false" onAction="#onRemoveFriendButtonPressed" prefHeight="25.0" prefWidth="214.0" style="-fx-border-radius: 50px; -fx-background-radius: 50px;" stylesheets="@main.css" text="Remove friend" textFill="WHITE">
+                     <styleClass>
+                        <String fx:value="toolbar-button" />
+                        <String fx:value="delete-button" />
+                     </styleClass></Button>
+                  <Text fx:id="userName1" fill="WHITE" layoutX="14.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Update your profile">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Text>
+               </children>
+               <styleClass>
+                  <String fx:value="split-pane-divider" />
+                  <String fx:value="split-pane" />
+               </styleClass>
+            </AnchorPane>
+          <AnchorPane prefWidth="355.0" style="-fx-background-color: rgb(30, 30, 30);" stylesheets="@main.css">
+               <children>
+                  <ImageView fx:id="userProfilePicture" fitHeight="150.0" fitWidth="150.0" layoutX="40.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../bill.jpg" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="userName" fill="WHITE" layoutX="219.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bill Gates">
+                     <font>
+                        <Font name="System Bold" size="40.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="userStatus" fill="WHITE" layoutX="219.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bill Gates is speaking..." wrappingWidth="453.806640625">
+                     <font>
+                        <Font name="System Italic" size="22.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="40.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Friends">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="userQuote" fill="WHITE" layoutX="307.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&quot;Success is a lousy teacher. It seduces smart people into thinking they can't lose.&quot;" wrappingWidth="453.806640625">
+                     <font>
+                        <Font name="System Italic" size="16.0" />
+                     </font>
+                  </Text>
+                  <ListView fx:id="friendList" layoutX="40.0" layoutY="244.0" prefHeight="368.0" prefWidth="248.0" style="-fx-background-color: rgb(30, 30, 30); -fx-border-color: rgb(60, 60, 60); -fx-border-radius: 10px;" stylesheets="@main.css">
+                     <styleClass>
+                        <String fx:value="list-cell" />
+                        <String fx:value="list-view" />
+                     </styleClass></ListView>
+                  <Label fx:id="appStatus" alignment="CENTER_RIGHT" layoutX="621.0" layoutY="582.0" prefHeight="27.0" prefWidth="357.0" textAlignment="RIGHT" textFill="#aeaeae" />
+               </children>
+               <styleClass>
+                  <String fx:value="split-pane" />
+                  <String fx:value="split-pane-divider" />
+               </styleClass>
+            </AnchorPane>
+        </items>
+         <styleClass>
+            <String fx:value="split-pane" />
+            <String fx:value="split-pane-divider" />
+         </styleClass>
+      </SplitPane>
+   </children>
+</VBox>

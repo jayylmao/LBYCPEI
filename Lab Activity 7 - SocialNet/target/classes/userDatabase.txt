@@ -1,0 +1,8 @@
+Jay Carlos,i can fix her,🍞 <- mmm baguette,jay.png,butter dog,Scott Wozniak,LowTierGod,Jebediah Schlatticus,Tom Anderson
+Bill Gates,Success is a lousy teacher. It seduces smart people into thinking they can't lose.,Bill Gates is speaking...,bill.jpg,Steve Jobs,Tom Anderson
+Steve Jobs,Beating you is Apple II easy.,Launching the iPhone 4,steve.jpg,Bill Gates,Tom Anderson
+Scott Wozniak,hey all,scott here,scott the woz.jpg,butter dog,Jebediah Schlatticus,Tom Anderson
+butter dog,dog with the butter on him,dog with the butter,butter dog.jpg,Tom Anderson
+Jebediah Schlatticus,big man,big men,jschlatt.jpg,Scott Wozniak,butter dog,Tom Anderson
+LowTierGod,Helping others emotionally,Love yourself. You serve all purpose. I mean that 100% 1000%.,lowtiergod.jpg,Jebediah Schlatticus,Tom Anderson
+Tom Anderson,30 male,:-),tom.jpg,Jay Carlos,Bill Gates,Steve Jobs,Scott Wozniak,butter dog,Jebediah Schlatticus,LowTierGod
