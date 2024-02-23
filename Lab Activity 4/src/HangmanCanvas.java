@@ -37,6 +37,7 @@ public class HangmanCanvas extends GCanvas {
 
     /* Write your methods here */
 
+    // clears all elements on the canvas.
     public void clear() {
         System.out.println("ELEMENTS ON CANVAS: " + getElementCount());
         textX = TEXT_X_OFFSET;

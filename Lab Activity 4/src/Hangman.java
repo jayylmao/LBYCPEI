@@ -1,14 +1,25 @@
 import acm.program.*;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Scanner;
 import java.util.Random;
 
 public class Hangman extends ConsoleProgram {
+    // tracks game stats during the lifetime of the program.
+    int bestScore = 0, gamesCount = 0, gamesWon = 0;
+    String bestScoreWord = "";
 
     public void run() {
-        String fileName = promptUserForFile("Provide a dictionary to select a random word to guess from: ", "assets/");
-        playOneGame(getRandomWord(fileName));
+        int gameContinue = 1;
+
+        // loop this to allow for multiple games.
+        while (gameContinue == 1) {
+            String fileName = promptUserForFile("Provide a dictionary to select a random word to guess from: ", "assets/");
+            gameContinue = playOneGame(getRandomWord(fileName));
+
+            stats(gamesCount, gamesWon, bestScore);
+        }
     }
 
     // this method introduces the player to hangman.
@@ -29,12 +40,8 @@ public class Hangman extends ConsoleProgram {
         // set the length of the secret word and
         // the boolean condition that dictates whether the game is running or not.
         int guessCount = 8;
-        String guessedLetters = new String();
-        String hintString = new String();
-
-        // tracks game stats during the lifetime of the program.
-        int bestScore = 0, gamesCount = 0, gamesWon = 0;
-        String bestScoreWord = new String();
+        String guessedLetters = "";
+        String hintString = "";
 
         // run the methods necessary for displaying the game.
         while (true) {
@@ -52,7 +59,7 @@ public class Hangman extends ConsoleProgram {
                 println("Game over.");
                 println("The word was: " + secretWord);
                 break;
-            } else if (hintString.contains("_ ") == false) {
+            } else if (!hintString.contains("_ ")) {
                 println("You won.");
                 break;
             }
@@ -61,7 +68,7 @@ public class Hangman extends ConsoleProgram {
             char latestUserGuess = readGuess(guessedLetters);
 
             // if the user's guess is not in the word to be guessed, subtract 1 from lives (guessCount).
-            if (secretWord.contains(latestUserGuess + "") == false) {
+            if (!secretWord.contains(latestUserGuess + "")) {
                 guessCount--;
             }
 
@@ -82,7 +89,15 @@ public class Hangman extends ConsoleProgram {
 
         gamesCount++;
 
-        return 0;
+        // ask the user if they want to continue or not.
+        String userChoice = "";
+        userChoice = getLine("Would you like to play another game? (Y/N): ").toUpperCase();
+
+        if (Objects.equals(userChoice, "Y")) {
+            return 1;
+        } else {
+            return 0;
+        }
     }
 
 
@@ -109,7 +124,7 @@ public class Hangman extends ConsoleProgram {
         return newGuessedLetters;
     }
 
-    // TODO: change this back to char and return a character
+    // reads input from the user, verifies the validity of the input, and returns the character.
     private char readGuess(String guessedLetters) {
         /* Loop to make sure input is valid as explained above*/
         while(true) {
@@ -133,7 +148,7 @@ public class Hangman extends ConsoleProgram {
         }
     }
 
-    // TODO: comment this method
+    // displays the hangman graphic on the canvas.
     private void displayHangman(int guessCount) {
         File file = new File("assets/display" + guessCount + ".txt");
         Scanner scanner = null;
@@ -151,12 +166,19 @@ public class Hangman extends ConsoleProgram {
         }
     }
 
-    // TODO: comment this method
+    // displays the number of games played in a session, games won, and the best score.
     private void stats(int gamesCount, int gamesWon, int best) {
+        println("\n\nGames played this session: " + gamesCount);
+        println("Games won this session: " + gamesWon);
 
+        if (gamesWon > 0) {
+            println("Your best score this session was " + best + " guesses remaining for the word '" + bestScoreWord + "'.\n\n");
+        } else {
+            println("You do not have a best score this session, as you have not won a game yet.");
+        }
     }
 
-    // TODO: comment this method
+    // gets a random word from a provided dictionary .txt file.
     private String getRandomWord(String filename) {
         Scanner dictScanner = null;
 
